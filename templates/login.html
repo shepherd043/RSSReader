@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>RSS Addict</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    </head>
+
+    <body>
+        <h2>Login to your Account:</h2>
+        <div>
+            <form id="login" action="/login" method="post">
+                <input autocomplete="off" autofocus type="text" class="field" name="username" placeholder="Username"><br><br>
+                <input autocomplete="off" autofocus type="password" class="field" name="password" placeholder="Password"><br><br>
+                <button type="submit" class="form-button">Submit</button><br>
+            </form><br><br>
+        </div>
+
+        <h6>Don't have an Account yet? Click below to Register!</h6>
+        <button  type="submit" onclick="window.location.href='{{ url_for( 'register' ) }}';" class="page-button">Register</button>
+
+        <p style="color:white;"> CS50 FINAL PROJECT SUBMISSION</p>
+        <p style="color:white;"> TITLE: RSS ADDICT  (RSS FEED READER WEBAPP)</p>
+        <p style="color:white;"> COMPLETED BY: ANDREW SHEPHERD</p>
+        <p style="color:white;">ORIGIN: OTTAWA,ONTARIO, CANADA</p>
+        <p style="color:white;"> DATE: DEC 12,2019</p>
+
+        <script>
+
+        document.getElementById("login").onsubmit = function(){
+            if (!document.querySelector('input').value)
+            {
+                alert('ERROR!  You must provide your Username and Password');
+                return false;
+            }
+
+            return true;
+        };
+
+        </script>
+    </body>
+</html>

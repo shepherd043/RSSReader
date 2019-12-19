@@ -1,0 +1,198 @@
+body
+{
+    margin: 0 auto ;
+    background-image: linear-gradient(to right, black,DarkSlateGrey, black);
+
+}
+
+
+h1
+{
+    text-align: center;
+    color: white;
+}
+
+h2
+{
+    position: relative;
+    color: white;
+    margin-top: 5%;
+    margin-left:42%;
+}
+
+h6
+{
+    position: relative;
+    color: white;
+    margin-left: 40%;
+}
+
+#login
+{
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    width: 25%;
+    height: 250px;
+    margin-left: 38%;
+    margin-top: 3%
+}
+
+.field
+{
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 20%;
+    color: black;
+    width: 60%;
+}
+
+#feed_form
+{
+    margin-left: 5%;
+    padding-bottom: 2%;
+}
+
+.form-button
+{
+    position: absolute;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 16px;
+    background-color: #87CEFA;
+    border-color:white;
+    margin-left: 36%;
+    margin-top: 10%;
+
+}
+
+.page-button
+{
+    position: absolute;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 16px;
+    background-color: #87CEFA;
+    border-color: white;
+    margin-left: 47%;
+}
+
+#registration
+{
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    border-radius:8px;
+    width: 20%;
+    height:400px;
+    margin-left: 40%;
+}
+
+.form-field
+{
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 12%;
+    color: black;
+    width: 75%;
+}
+
+.reg-button
+{
+    position: absolute;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 16px;
+    background-color: #87CEFA;
+    bottom: 5%;
+    left: 35%;
+    border-color: white;
+
+}
+
+.topbar
+{
+    float: top;
+    height: 15%;
+    width: 100%;
+    background: black;
+}
+
+.welcome
+{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+.premade
+{
+    position: absolute;
+    bottom: 1%;
+    width: 75%;
+    left: 12%;
+    text-align: center;
+}
+
+.premade-title
+{
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.user-list-title
+{
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.user-list
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 75%;
+    margin-left: 12%;
+    text-align: center;
+}
+
+.news
+{
+    float: left;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 18px;
+    margin-left: 15%;
+}
+
+.logout
+{
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 8px;
+    background-color: #87CEFA;
+}
+
+.list-group
+{
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 12px;
+
+}
+
+.selection_reel
+{
+    float: left;
+    width: 25%;
+    padding: 25px;
+}
+
+
+
+

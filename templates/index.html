@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>RSS Addict</title>
+
+
+    </head>
+
+    <body>
+        <div class="topbar">
+            <p class="welcome"> Welcome {{name}} </p>
+            <form action="/logout" method="get">
+                <button type="submit" class="logout">Logout</button>
+            </form>
+
+            <form action="/" method="post" id="feed_form">
+                <input autocomplete="off" autofocus type="text" name="feed" placeholder="Add RSS Feed Address">
+                <button class="btn btn-primary" type="submit" name="button" id="add_button">Add Feed</button>
+            </form>
+
+            <form action="/premade" method="post">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <button class="btn" style="background:black; color:white;" type="submit" name="category" value="arts">Arts</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn" style="background:black; color:white;" type="submit" name="category" value="science">Science</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn" style="background:black; color:white;" type="submit" name="category" value="tech">Tech</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn" style="background:black; color:white;" type="submit" name="category" value="world">World</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn" style="background:black; color:white;" type="submit" name="category" value="custom">My Feeds</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="news w-50" >
+            {% for article in articles %}
+            <div class="card" style="background: white; margin-bottom: 3%;">
+                <img src={{article.img}} class="card-img-top mx-auto" alt="..." style="object-fit: contain;">
+                <div class="card-body">
+                    <h5 class="card-title">{{article.title}}</h5>
+                    <p class="card-text">{{article.description}}</p>
+                    <a href="{{article.link}}" target="_blank" class="btn btn-primary"> See Full Article</a>
+                </div>
+                <div class="card-footer">
+                    Date Published: {{article.pubDate}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="selection_reel">
+            <form action="/selection" method="post" id="active_feed_list">
+                {% for feed in feeds %}
+                <div class="card mb-3"  >
+                    <button type="submit" name="selected" value={{feed.feed_id}}>
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{feed.url}}" alt=".." style="width:50%;" >
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-text">{{feed.title}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                {% endfor %}
+                <div class="list-group" >
+                    <button type="submit" class="list-group-item list-group-item-action active" name="selected" value="All">All Feeds</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+
+        document.getElementById("feed_form").onsubmit = function(){
+            if (!document.querySelector('input').value)
+            {
+                alert('ERROR!  Please Enter a Valid feed Address to add it to your Feed');
+                return false;
+            }
+        };
+
+        </script>
+    </body>
+</html>
